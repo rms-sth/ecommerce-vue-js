@@ -2,6 +2,9 @@
 node_modules
 /dist
 
+# custom
+.env
+.docker/
 
 # local env files
 .env.local
