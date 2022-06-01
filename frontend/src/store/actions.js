@@ -25,3 +25,14 @@ export const getCartItems = ({ commit }) => {
         commit('GET_CART_ITEMS', response.data)
     })
 }
+
+export const removeProductFromCart = ({ commit }, product) => {
+    commit('REMOVE_PRODUCT_FROM_CART', product);
+    axios.delete(`http://127.0.0.1:8000/api/cart/${product.id}`)
+}
+
+export const clearProductFromCart = ({ commit }) => {
+    axios.delete('http://127.0.0.1:8000/api/cart/').then(response => {
+        commit('CLEAR_PRODUCT_FROM_CART', response);
+    })
+}

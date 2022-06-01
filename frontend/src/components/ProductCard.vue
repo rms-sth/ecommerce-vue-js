@@ -15,7 +15,7 @@
             </div>
 
             <div class="px-4 pb-3">
-                <button class="btn btn-secondary" @click="addToCart()">Add to Cart</button>
+                <button class="btn btn-secondary" @click="addProductToCart()">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@
 export default {
     props: ['product'],
     methods: {
-        addToCart() {
+        addProductToCart() {
             this.$store.dispatch('addProductToCart', {
                 product: this.product,
                 quantity: 1

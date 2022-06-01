@@ -7,7 +7,7 @@
             <h1>{{ product.title }}</h1>
             <h3>${{ product.price }}</h3>
             <input v-model.number="quantity" type="text" class="text-center col-1 mr-2 p-1">
-            <button class="btn btn-primary" @click="addToCart()">Add to Cart</button>
+            <button class="btn btn-primary" @click="addProductToCart()">Add to Cart</button>
             <p class="mt-4">{{ product.description }}</p>
         </div>
     </div>
@@ -31,7 +31,7 @@ export default {
         }
     },
     methods: {
-        addToCart() {
+        addProductToCart() {
             this.$store.dispatch('addProductToCart', {
                 product: this.product,
                 quantity: this.quantity
